@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">TheOfficeMiniQuiz</string>
+    <string name="enter_name">Enter Your Name </string>
+    <string name="name_hint">ENTER YOUR NAME</string>
+    <string name="andy_school_question">Question 2\nWhat college did Andy Bernard Attend?</string>
+    <string name="current_score">Current Score</string>
+    <string name="meredith">meredith</string>
+    <string name="michael_car">Question 1 \nWho Did Michael hit with his car?</string>
+    <string name="answer_hint">Type Answer</string>
+    <string name="question_3">Question 3</string>
+    <string name="year_debut">What year did The Office US edition debut?</string>
+    <string name="year_2010">2010</string>
+    <string name="year_2003">2003</string>
+    <string name="year_2005">2005</string>
+    <string name="scranton">Scranton, PA</string>
+    <string name="NYC">New York, New York</string>
+    <string name="Jack">Jacksonville,FL</string>
+    <string name="question_4">Question 4</string>
+    <string name="pam_married">Question 4\nWho was Pam not married to?</string>
+    <string name="roy">Roy</string>
+    <string name="toby">Toby</string>
+    <string name="Jim">Jim</string>
+    <string name="show_location">Question 5\nWhere does the show take place?</string>
+    <string name="jane_sell">Question 6\nWhat Does Jan Sell?</string>
+    <string name="books">Children\'s Books</string>
+    <string name="candles">Candles</string>
+    <string name="craft_beer">Craft Beer</string>
+    <string name="toby_known">Question 7\nWhat was Toby known for?</string>
+    <string name="mike_fav">Being Michael\'s Favorite</string>
+    <string name="scranton_trial">Scranton Strangler Trial</string>
+    <string name="hum_res">Human Resources</string>
+    <string name="mike_phylis">Question 8\nDid Michael and Phylis go to school together?</string>
+    <string name="true_yes">True</string>
+    <string name="false_no">False</string>
+    <string name= "zero_text">0</string>
+    <string name="get_score">Get Score</string>
+
+
+
+    <string-array name="andyQuestion">
+        <item>  </item>
+        <item>LOYOLA CHICAGO</item>
+        <item>CORNELL</item>
+        <item>NYU</item>
+        <item>PRINCETON</item>
+        <item>MIT</item>
+    </string-array>
+
+</resources>

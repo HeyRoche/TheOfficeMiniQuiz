@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context="com.example.android.theofficeminiquiz.Questions">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <EditText
+            style="@style/Main_Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/name_hint"
+            android:inputType="text" />
+
+        <TextView
+            style="@style/Main_Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/michael_car" />
+
+        <EditText
+            android:id="@+id/hit_with_car"
+            style="@style/Main_Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/answer_hint"
+            android:inputType="text" />
+
+
+        <TextView
+            style="@style/Main_Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/andy_school_question" />
+
+
+        <Spinner
+            android:id="@+id/andySpinner"
+            style="@style/Main_Style"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp" />
+
+        <TextView
+            style="@style/Main_Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/question_3" />
+
+        <TextView
+            style="@style/Main_Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/year_debut" />
+
+        <RadioGroup
+            style="@style/Secondary_Question_Selections"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radio_2010"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/year_2010"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/radio_2003"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/year_2003"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/radio_2005"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/year_2005"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </RadioGroup>
+
+
+        <TextView
+            style="@style/Main_Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pam_married" />
+
+
+        <CheckBox
+            android:id="@+id/Jim"
+            style="@style/Secondary_Question_Selections"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:text="@string/Jim" />
+
+        <CheckBox
+            android:id="@+id/Toby"
+            style="@style/Secondary_Question_Selections"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:text="@string/toby"
+
+            />
+
+        <CheckBox
+            android:id="@+id/Roy"
+            style="@style/Secondary_Question_Selections"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:text="@string/roy"
+
+            />
+
+        <TextView
+            style="@style/Main_Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/show_location" />
+
+        <RadioGroup
+            style="@style/Secondary_Question_Selections"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radio_Scranton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/scranton"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/radio_Jacksonville"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/Jack"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/radio_New_York"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/NYC"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </RadioGroup>
+
+        <TextView
+            style="@style/Main_Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/jane_sell" />
+
+        <RadioGroup
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radio_books"
+                style="@style/Secondary_Question_Selections"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+
+                android:text="@string/books"
+
+                />
+
+            <RadioButton
+                android:id="@+id/radio_candles"
+                style="@style/Secondary_Question_Selections"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+
+                android:text="@string/candles"
+
+
+                />
+
+            <RadioButton
+                android:id="@+id/radio_beer"
+                style="@style/Secondary_Question_Selections"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/craft_beer" />
+
+        </RadioGroup>
+
+        <TextView
+            style="@style/Main_Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/toby_known" />
+
+
+        <CheckBox
+            android:id="@+id/mike_favorite"
+            style="@style/Secondary_Question_Selections"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mike_fav"
+
+            />
+
+        <CheckBox
+            android:id="@+id/scranton_strangler"
+            style="@style/Secondary_Question_Selections"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/scranton_trial" />
+
+        <CheckBox
+            android:id="@+id/hr"
+            style="@style/Secondary_Question_Selections"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hum_res" />
+
+        <TextView
+            style="@style/Main_Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mike_phylis" />
+
+
+        <RadioGroup
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+        <RadioButton
+            android:id="@+id/true_school"
+            style="@style/Secondary_Question_Selections"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/true_yes" />
+
+        <RadioButton
+            android:id="@+id/false_school"
+            style="@style/Secondary_Question_Selections"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/false_no" />
+        </RadioGroup>
+
+
+        <TextView
+            android:id="@+id/current_score"
+            style="@style/Main_Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/zero_text" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="calcScore"
+            android:text="@string/get_score" />
+
+
+    </LinearLayout>
+</ScrollView>
