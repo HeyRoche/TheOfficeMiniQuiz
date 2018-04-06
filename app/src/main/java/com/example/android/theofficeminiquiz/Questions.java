@@ -16,6 +16,8 @@ import android.widget.Toast;
 public class Questions extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     int score = 0;
+    int rightAnswer = 0;
+    int wrongAnswer = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,10 +87,34 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         CheckBox selectionThreeCheckBox = (CheckBox) findViewById(R.id.Roy);
         boolean qTwoCheckbox3 = selectionThreeCheckBox.isChecked();
 
+        RadioButton selectionOneQuestion9 = (RadioButton) findViewById(R.id.kelly_selection);
+        boolean qNineRadio1 = selectionOneQuestion9.isChecked();
+
+        RadioButton selectionTwoQuestion9 = (RadioButton) findViewById(R.id.Stanley_selection);
+        boolean qNineRadio2 = selectionTwoQuestion9.isChecked();
+
+        RadioButton selectionThreeQuestion9 = (RadioButton) findViewById(R.id.Jim_selection);
+        boolean qNineRadio3 = selectionThreeQuestion9.isChecked();
+
+        RadioButton selectionFourQuestion9 = (RadioButton) findViewById(R.id.creed_selection);
+        boolean qNineRadio4 = selectionFourQuestion9.isChecked();
+
+        RadioButton selectionOneQuestion10 = (RadioButton) findViewById(R.id.John_selection);
+        boolean qTenRadio1 = selectionOneQuestion10.isChecked();
+
+        RadioButton selectionTwoQuestion10 = (RadioButton) findViewById(R.id.chris_selection);
+        boolean qTenRadio2 = selectionTwoQuestion10.isChecked();
+
+        RadioButton selectionThreeQuestion10 = (RadioButton) findViewById(R.id.scrantones);
+        boolean qTenRadio3 = selectionThreeQuestion10.isChecked();
+
+        RadioButton selectionFourQuestion10 = (RadioButton) findViewById(R.id.Darryl);
+        boolean qTenRadio4 = selectionFourQuestion10.isChecked();
+
 
         //calculate total score
         int questionCalc = questionCheck(qOneRadio1, qOneRadio2, qOneRadio3) + showTakePlace(qFiveRadio1, qFiveRadio2, qFiveRadio3) + janSell(qSixRadio1, qSixRadio2, qSixRadio3) + tobyKnownFor(qSevenCheckbox2, qSevenCheckbox3);
-        questionCalc = questionCalc + questionCheck2(qTwoCheckbox2, qTwoCheckbox3) + goToSchool(qEightRadio1, qEightRadio2);
+        questionCalc = questionCalc + questionCheck2(qTwoCheckbox2, qTwoCheckbox3) + goToSchool(qEightRadio1, qEightRadio2) + stutterQuestion(qNineRadio1, qNineRadio2, qNineRadio3, qNineRadio4) + themeSong(qTenRadio1, qTenRadio2, qTenRadio3, qTenRadio4);
         questionCalc = questionCalc + editTextResponse();
         score = score + questionCalc;
         displayScore(score);
@@ -112,6 +138,7 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
             case 0:
                 break;
             case 1:
+
                 score = 0;
 
                 break;
@@ -121,14 +148,17 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
 
                 break;
             case 3:
+
                 score = 0;
 
                 break;
             case 4:
+
                 score = 0;
 
                 break;
             case 5:
+
                 score = 0;
 
                 break;
@@ -143,7 +173,7 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
     }
 
 
-   //The methods below are used to determine the points awarded for correct and incorrect answers.
+    //The methods below are used to determine the points awarded for correct and incorrect answers.
     public int questionCheck(boolean qOneRadio1, boolean qOneRadio2, boolean qOneRadio3) {
         int radioScore = 0;
 
@@ -151,20 +181,13 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
 
             radioScore = radioScore + 5;
 
-        }
-
-        if (qOneRadio2) {
+        } else {
 
             radioScore = 0;
 
 
         }
 
-        if (qOneRadio1) {
-
-            radioScore = 0;
-
-        }
 
         return radioScore;
     }
@@ -197,10 +220,17 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         String carResponse = car.getText().toString().toLowerCase();
 
 
+        if (carResponse.compareTo(getString(R.string.Meredith)) == 0) {
+            carScore = carScore + 5;
+
+
+        }
         if (carResponse.compareTo(getString(R.string.meredith)) == 0) {
             carScore = carScore + 5;
 
+
         } else {
+
             carScore = 0;
 
         }
@@ -217,6 +247,7 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
 
         } else {
             radioScore2 = 0;
+
         }
 
         return radioScore2;
@@ -232,6 +263,7 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
 
         } else {
             radioScore3 = 0;
+
         }
 
         return radioScore3;
@@ -266,19 +298,59 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
 
         } else {
             radioScore4 = 0;
+
         }
 
         return radioScore4;
     }
 
-    //Displays users score on the screen.
-    public void displayScore(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.current_score);
-        scoreView.setText(String.valueOf(score));
+    public int stutterQuestion(boolean qNineRadio1, boolean qNineRadio2, boolean qNineRadio3, boolean qNineRadio4) {
+        int radioScore4 = 0;
+
+        if (qNineRadio2) {
+
+            radioScore4 = radioScore4 + 5;
+
+        } else {
+            radioScore4 = 0;
+
+
+            return radioScore4;
+
+        }}
+
+
+        public int themeSong ( boolean qTenRadio1, boolean qTenRadio2, boolean qTenRadio3,
+        boolean qTenRadio4){
+            int radioScore5 = 0;
+
+            if (qTenRadio3) {
+
+                radioScore5 = radioScore5 + 5;
+
+            } else {
+                radioScore5 = 0;
+
+            }
+
+            return radioScore5;
+        }
+
+        //Displays users score on the screen.
+        public void displayScore ( int score){
+            TextView scoreView = (TextView) findViewById(R.id.current_score);
+            scoreView.setText(String.valueOf(score));
+
+        }
+
+        public void resetScore (View view){
+            score = 0;
+            displayScore(score);
+        }
+
 
     }
 
-}
 
 
 //Still need to reset the score and account for what happens during pause state.
