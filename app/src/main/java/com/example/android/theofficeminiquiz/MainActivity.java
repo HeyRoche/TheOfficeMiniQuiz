@@ -13,16 +13,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         nextButton();
-
-
     }
 
-
     public void nextButton() {
-
-
         Button buttonPlay = (Button) findViewById(R.id.buttonStart);
         buttonPlay.setOnClickListener(new View.OnClickListener() {
 
@@ -32,8 +26,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
-
 }

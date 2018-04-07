@@ -23,7 +23,6 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
     int score = 0;
     int correctAnswer = 0;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +34,7 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-
-        //called so that keyboard doesn't immediately open when app is running
+        /*called so that keyboard doesn't immediately open when app is running.*/
         EditText yourName = findViewById(R.id.user_name);
         getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
@@ -48,7 +46,6 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
      *
      */
     public void calcScore(View view) {
-
 
         RadioButton selectionThreeRadio = findViewById(R.id.radio_2005);
         boolean qOneRadio3 = selectionThreeRadio.isChecked();
@@ -68,7 +65,6 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         RadioButton selectionOneQuestion8 = (RadioButton) findViewById(R.id.true_school);
         boolean qEightRadio1 = selectionOneQuestion8.isChecked();
 
-
         CheckBox selectionTwoCheckBox = (CheckBox) findViewById(R.id.Toby);
         boolean qTwoCheckbox2 = selectionTwoCheckBox.isChecked();
 
@@ -81,7 +77,6 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         RadioButton selectionThreeQuestion10 = (RadioButton) findViewById(R.id.scrantones);
         boolean qTenRadio3 = selectionThreeQuestion10.isChecked();
 
-
         //calculate total score
         int questionCalc = questionCheck(qOneRadio3) + showTakePlace(qFiveRadio1) + janSell(qSixRadio2) + tobyKnownFor(qSevenCheckbox2, qSevenCheckbox3);
         questionCalc = questionCalc + questionCheck2(qTwoCheckbox2, qTwoCheckbox3) + goToSchool(qEightRadio1) + stutterQuestion(qNineRadio2) + themeSong(qTenRadio3);
@@ -91,9 +86,7 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
 
         //Toast message to display at end of quiz.
         Toast.makeText(this, "Congrats you answered " + correctAnswer + " out of 10 correctly!", Toast.LENGTH_LONG).show();
-
     }
-
 
     /**
      * calculats score using, global variable for the spinner adapter.
@@ -103,50 +96,35 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
      * @param i
      * @param l
      */
+
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-
         switch (i) {
-
             case 0:
                 break;
             case 1:
-
                 score = 0;
-
                 break;
             case 2:
                 score = 0;
                 score = score + 5;
                 correctAnswer++;
-
                 break;
             case 3:
-
                 score = 0;
-
                 break;
             case 4:
-
                 score = 0;
-
                 break;
             case 5:
-
                 score = 0;
-
                 break;
-
         }
-
     }
 
-
-    @Override
+  @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
     }
-
 
     /**
      * @param qOneRadio3 first radio question, refers to show start.
@@ -158,20 +136,14 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         int radioScore = 0;
 
         if (qOneRadio3) {
-
             radioScore = radioScore + 5;
             correctAnswer++;
-
-
         } else {
 
             radioScore = 0;
-
-
         }
         return radioScore;
     }
-
     /**
      * first checkbox question, refers to wedding.
      * calculates score for question.
@@ -181,25 +153,16 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
      */
 
     public int questionCheck2(boolean qTwoCheckbox2, boolean qTwoCheckbox3) {
-
         int wedScore = 0;
 
         if (qTwoCheckbox2 && qTwoCheckbox3) {
-
             wedScore = wedScore + 5;
             correctAnswer++;
-
-
         } else {
-
             wedScore = 0;
-
-
         }
-
         return wedScore;
     }
-
 
     /**
      * calculates score for question.
@@ -207,34 +170,25 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
      * @return returns score based on selection user provides.
      * The method below checks the editText response provided by the user.
      */
+
     public int editTextResponse() {
 
         int carScore = 0;
-
         EditText car = findViewById(R.id.hit_with_car);
         String carResponse = car.getText().toString().toLowerCase();
         getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
         );
-
-
         if (carResponse.compareTo(getString(R.string.Meredith)) == 0) {
             carScore = carScore + 5;
             correctAnswer++;
-
-
         }
         if (carResponse.compareTo(getString(R.string.meredith)) == 0) {
             carScore = carScore + 5;
             correctAnswer++;
-
-
         } else {
-
             carScore = 0;
-
         }
-
         return carScore;
     }
 
@@ -249,18 +203,13 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         int radioScore2 = 0;
 
         if (qFiveRadio1) {
-
             radioScore2 = radioScore2 + 5;
             correctAnswer++;
-
         } else {
             radioScore2 = 0;
-
         }
-
         return radioScore2;
     }
-
 
     /**
      * calculates score for question.
@@ -273,18 +222,13 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         int radioScore3 = 0;
 
         if (qSixRadio2) {
-
             radioScore3 = radioScore3 + 5;
             correctAnswer++;
-
         } else {
             radioScore3 = 0;
-
         }
-
         return radioScore3;
     }
-
 
     /**
      * calculates score for question.
@@ -293,23 +237,17 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
      * @param qSevenCheckbox3 second checkbox question on the quiz, refers to HR.
      * @return returns score based on selection user provides.
      */
+
     public int tobyKnownFor(boolean qSevenCheckbox2, boolean qSevenCheckbox3) {
 
         int tobyScore = 0;
 
         if (qSevenCheckbox2 && qSevenCheckbox3) {
-
             tobyScore = tobyScore + 5;
             correctAnswer++;
-
-
         } else {
-
             tobyScore = 0;
-
-
         }
-
         return tobyScore;
     }
 
@@ -324,15 +262,11 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         int radioScore4 = 0;
 
         if (qEightRadio1) {
-
             radioScore4 = radioScore4 + 5;
             correctAnswer++;
-
         } else {
             radioScore4 = 0;
-
         }
-
         return radioScore4;
     }
 
@@ -347,16 +281,11 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         int radioScore4 = 0;
 
         if (qNineRadio2) {
-
             radioScore4 = radioScore4 + 5;
             correctAnswer++;
-
         } else {
             radioScore4 = 0;
-
-
         }
-
         return radioScore4;
     }
 
@@ -371,18 +300,13 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         int radioScore5 = 0;
 
         if (qTenRadio3) {
-
             radioScore5 = radioScore5 + 5;
             correctAnswer++;
-
         } else {
             radioScore5 = 0;
-
         }
-
         return radioScore5;
     }
-
 
     /**
      * @param score display final score based on calcScore calculations.
@@ -391,7 +315,6 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
     public void displayScore(int score) {
         TextView scoreView = (TextView) findViewById(R.id.current_score);
         scoreView.setText(String.valueOf(score));
-
     }
 
     /**
@@ -448,11 +371,7 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
 
         Spinner spinner = findViewById(R.id.andySpinner);
         spinner.setAdapter(null);
-
-
     }
-
-
 }
 
 
