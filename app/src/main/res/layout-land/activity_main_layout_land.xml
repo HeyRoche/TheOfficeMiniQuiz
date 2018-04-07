@@ -1,27 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<ScrollView
-
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.android.theofficeminiquiz.MainActivity">
-
     <RelativeLayout
-
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+        android:layout_height="match_parent"
+        tools:context="com.example.android.theofficeminiquiz.MainActivity">
 
 
             <TextView
+                android:id="@+id/app_main_name"
                 style="@style/Main_Style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -37,7 +27,9 @@
                 android:id="@+id/mainofficeimage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/app_main_name"
                 android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="24dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/theofficegroup" />
@@ -47,11 +39,9 @@
                 android:id="@+id/buttonStart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="32dp"
+                android:layout_marginLeft="64dp"
+                android:layout_marginTop="180dp"
+                android:layout_toRightOf="@+id/mainofficeimage"
                 android:text="@string/get_start" />
 
-
-        </LinearLayout>
     </RelativeLayout>
-</ScrollView>

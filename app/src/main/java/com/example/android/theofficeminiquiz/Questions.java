@@ -1,11 +1,9 @@
 package com.example.android.theofficeminiquiz;
 
 
-import android.content.Intent;
-import android.net.Uri;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -18,7 +16,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.concurrent.Semaphore;
+
 
 public class Questions extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -45,8 +43,10 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         );
     }
 
-
-    //calcScore beings once user has entered all answers, total is then added and displayed on the screen.
+    /**
+     * calculates score for all answers selected or input during quiz.
+     *
+     */
     public void calcScore(View view) {
 
 
@@ -82,7 +82,6 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         boolean qTenRadio3 = selectionThreeQuestion10.isChecked();
 
 
-
         //calculate total score
         int questionCalc = questionCheck(qOneRadio3) + showTakePlace(qFiveRadio1) + janSell(qSixRadio2) + tobyKnownFor(qSevenCheckbox2, qSevenCheckbox3);
         questionCalc = questionCalc + questionCheck2(qTwoCheckbox2, qTwoCheckbox3) + goToSchool(qEightRadio1) + stutterQuestion(qNineRadio2) + themeSong(qTenRadio3);
@@ -91,12 +90,19 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         displayScore(score);
 
         //Toast message to display at end of quiz.
-        Toast.makeText(this, "Congrats you answered " + correctAnswer + " out of 10 correctly!",Toast.LENGTH_LONG ).show();
+        Toast.makeText(this, "Congrats you answered " + correctAnswer + " out of 10 correctly!", Toast.LENGTH_LONG).show();
 
     }
 
 
-    //Method to determine how many points to award when spinner answer is chosen.
+    /**
+     * calculats score using, global variable for the spinner adapter.
+     *
+     * @param adapterView
+     * @param view
+     * @param i
+     * @param l
+     */
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
@@ -143,12 +149,12 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
 
 
     /**
-     *@param qOneRadio3 refers to question re: when did the show start
-     *
-     *The methods below are used to determine the points awarded for correct and incorrect answers.
+     * @param qOneRadio3 first radio question, refers to show start.
+     *                   calculates score for question.
+     *                   The methods below are used to determine the points awarded for correct and incorrect answers.
      */
 
-    public int questionCheck( boolean qOneRadio3  ) {
+    public int questionCheck(boolean qOneRadio3) {
         int radioScore = 0;
 
         if (qOneRadio3) {
@@ -157,7 +163,7 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
             correctAnswer++;
 
 
-        }  else {
+        } else {
 
             radioScore = 0;
 
@@ -165,6 +171,14 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         }
         return radioScore;
     }
+
+    /**
+     * first checkbox question, refers to wedding.
+     * calculates score for question.
+     *
+     * @param qTwoCheckbox2 refers to second answer selection.
+     * @param qTwoCheckbox3 refers to third answer selection.
+     */
 
     public int questionCheck2(boolean qTwoCheckbox2, boolean qTwoCheckbox3) {
 
@@ -187,8 +201,12 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
     }
 
 
-
-
+    /**
+     * calculates score for question.
+     *
+     * @return returns score based on selection user provides.
+     * The method below checks the editText response provided by the user.
+     */
     public int editTextResponse() {
 
         int carScore = 0;
@@ -220,6 +238,13 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         return carScore;
     }
 
+    /**
+     * calculates score for question.
+     *
+     * @param qFiveRadio1 refers to the second radio question asked.
+     * @return returns score based on selection user provides.
+     */
+
     public int showTakePlace(boolean qFiveRadio1) {
         int radioScore2 = 0;
 
@@ -237,7 +262,14 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
     }
 
 
-    public int janSell( boolean qSixRadio2) {
+    /**
+     * calculates score for question.
+     *
+     * @param qSixRadio2 refers to the sixth question asked on the quiz, third radio question.
+     * @return returns score based on selection user provides.
+     */
+
+    public int janSell(boolean qSixRadio2) {
         int radioScore3 = 0;
 
         if (qSixRadio2) {
@@ -253,6 +285,14 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         return radioScore3;
     }
 
+
+    /**
+     * calculates score for question.
+     *
+     * @param qSevenCheckbox2 second checkbox question on the quiz, refers to scranton strangler.
+     * @param qSevenCheckbox3 second checkbox question on the quiz, refers to HR.
+     * @return returns score based on selection user provides.
+     */
     public int tobyKnownFor(boolean qSevenCheckbox2, boolean qSevenCheckbox3) {
 
         int tobyScore = 0;
@@ -273,6 +313,12 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         return tobyScore;
     }
 
+    /**
+     * calculates score for question.
+     *
+     * @param qEightRadio1 fourth radio question on quiz, refers to true as an answer selection.
+     * @return returns score based on selection user provides.
+     */
 
     public int goToSchool(boolean qEightRadio1) {
         int radioScore4 = 0;
@@ -290,7 +336,14 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         return radioScore4;
     }
 
-    public int stutterQuestion( boolean qNineRadio2) {
+    /**
+     * calculates score for question.
+     *
+     * @param qNineRadio2 fifth radio question on quiz, refers to question 9.
+     * @return returns score based on selection user provides
+     */
+
+    public int stutterQuestion(boolean qNineRadio2) {
         int radioScore4 = 0;
 
         if (qNineRadio2) {
@@ -307,93 +360,102 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         return radioScore4;
     }
 
+    /**
+     * calculates score for the question.
+     *
+     * @param qTenRadio3 sixth and final radio question, refers to question 10.
+     * @return returns score based on selection user provides
+     */
 
-        public int themeSong ( boolean qTenRadio3){
-            int radioScore5 = 0;
+    public int themeSong(boolean qTenRadio3) {
+        int radioScore5 = 0;
 
-            if (qTenRadio3) {
+        if (qTenRadio3) {
 
-                radioScore5 = radioScore5 + 5;
-                correctAnswer++;
+            radioScore5 = radioScore5 + 5;
+            correctAnswer++;
 
-            } else {
-                radioScore5 = 0;
-
-            }
-
-            return radioScore5;
-        }
-
-
-
-
-    //Displays users score on the screen.
-        public void displayScore ( int score){
-            TextView scoreView = (TextView) findViewById(R.id.current_score);
-            scoreView.setText(String.valueOf(score));
+        } else {
+            radioScore5 = 0;
 
         }
 
-        public void resetScore (View view){
-            score = 0;
-            displayScore(score);
-
-            RadioGroup radioGroup1 =  findViewById(R.id.radioGroup_1_year);
-            radioGroup1.clearCheck();
-
-            RadioGroup radioGroup2 = findViewById(R.id.radioGroup_2_location);
-            radioGroup2.clearCheck();
-
-            RadioGroup radioGroup3 =  findViewById(R.id.radioGroup_3_jan);
-            radioGroup3.clearCheck();
-
-            RadioGroup radioGroup4 =  findViewById(R.id.radioGroup_4_school);
-            radioGroup4.clearCheck();
-
-            RadioGroup radioGroup5 =  findViewById(R.id.radioGroup_5_stanley);
-            radioGroup5.clearCheck();
-
-            RadioGroup radioGroup6 =  findViewById(R.id.radioGroup_6_song);
-            radioGroup6.clearCheck();
-
-            EditText userName = findViewById(R.id.user_name);
-            userName.getText().clear();
-
-            EditText car = findViewById(R.id.hit_with_car);
-            car.getText().clear();
-
-            CheckBox selectionOneCheckBox =  findViewById(R.id.Jim);
-            selectionOneCheckBox.setChecked(false);
-
-            CheckBox selectionTwoCheckBox =  findViewById(R.id.Toby);
-            selectionTwoCheckBox.setChecked(false);
-
-            CheckBox selectionThreeCheckBox =  findViewById(R.id.Roy);
-            selectionThreeCheckBox.setChecked(false);
-
-            CheckBox selectionOneCheckBox2 =  findViewById(R.id.mike_favorite);
-            selectionOneCheckBox2.setChecked(false);
-
-            CheckBox selectionTwoCheckBox2 =  findViewById(R.id.scranton_strangler);
-            selectionTwoCheckBox2.setChecked(false);
-
-            CheckBox selectionThreeCheckBox2 =  findViewById(R.id.hr);
-            selectionThreeCheckBox2.setChecked(false);
-
-            Spinner spinner = findViewById(R.id.andySpinner);
-            spinner.setAdapter(null);
+        return radioScore5;
+    }
 
 
-        }
+    /**
+     * @param score display final score based on calcScore calculations.
+     */
 
+    public void displayScore(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.current_score);
+        scoreView.setText(String.valueOf(score));
+
+    }
+
+    /**
+     * resets the score and answered selected from the quiz.
+     *
+     * @param view
+     */
+
+    public void resetScore(View view) {
+        score = 0;
+        displayScore(score);
+
+        RadioGroup radioGroup1 = findViewById(R.id.radioGroup_1_year);
+        radioGroup1.clearCheck();
+
+        RadioGroup radioGroup2 = findViewById(R.id.radioGroup_2_location);
+        radioGroup2.clearCheck();
+
+        RadioGroup radioGroup3 = findViewById(R.id.radioGroup_3_jan);
+        radioGroup3.clearCheck();
+
+        RadioGroup radioGroup4 = findViewById(R.id.radioGroup_4_school);
+        radioGroup4.clearCheck();
+
+        RadioGroup radioGroup5 = findViewById(R.id.radioGroup_5_stanley);
+        radioGroup5.clearCheck();
+
+        RadioGroup radioGroup6 = findViewById(R.id.radioGroup_6_song);
+        radioGroup6.clearCheck();
+
+        EditText userName = findViewById(R.id.user_name);
+        userName.getText().clear();
+
+        EditText car = findViewById(R.id.hit_with_car);
+        car.getText().clear();
+
+        CheckBox selectionOneCheckBox = findViewById(R.id.Jim);
+        selectionOneCheckBox.setChecked(false);
+
+        CheckBox selectionTwoCheckBox = findViewById(R.id.Toby);
+        selectionTwoCheckBox.setChecked(false);
+
+        CheckBox selectionThreeCheckBox = findViewById(R.id.Roy);
+        selectionThreeCheckBox.setChecked(false);
+
+        CheckBox selectionOneCheckBox2 = findViewById(R.id.mike_favorite);
+        selectionOneCheckBox2.setChecked(false);
+
+        CheckBox selectionTwoCheckBox2 = findViewById(R.id.scranton_strangler);
+        selectionTwoCheckBox2.setChecked(false);
+
+        CheckBox selectionThreeCheckBox2 = findViewById(R.id.hr);
+        selectionThreeCheckBox2.setChecked(false);
+
+        Spinner spinner = findViewById(R.id.andySpinner);
+        spinner.setAdapter(null);
 
 
     }
 
 
+}
 
-//Still need to reset the score and account for what happens during pause state.
-//Still need a toast with final score information.
+
 
 
 
