@@ -1,7 +1,6 @@
 package com.example.android.theofficeminiquiz;
 
 
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +14,6 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 
 public class Questions extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -43,10 +41,9 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
 
     /**
      * calculates score for all answers selected or input during quiz.
-     *
      */
-    public void calcScore(View view) {
 
+    public void calcScore(View view) {
         RadioButton selectionThreeRadio = findViewById(R.id.radio_2005);
         boolean qOneRadio3 = selectionThreeRadio.isChecked();
 
@@ -122,7 +119,7 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         }
     }
 
-  @Override
+    @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
     }
 
@@ -139,11 +136,11 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
             radioScore = radioScore + 5;
             correctAnswer++;
         } else {
-
             radioScore = 0;
         }
         return radioScore;
     }
+
     /**
      * first checkbox question, refers to wedding.
      * calculates score for question.
@@ -172,7 +169,6 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
      */
 
     public int editTextResponse() {
-
         int carScore = 0;
         EditText car = findViewById(R.id.hit_with_car);
         String carResponse = car.getText().toString().toLowerCase();
@@ -239,7 +235,6 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
      */
 
     public int tobyKnownFor(boolean qSevenCheckbox2, boolean qSevenCheckbox3) {
-
         int tobyScore = 0;
 
         if (qSevenCheckbox2 && qSevenCheckbox3) {
