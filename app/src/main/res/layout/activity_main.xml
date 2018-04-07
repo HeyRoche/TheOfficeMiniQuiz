@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.theofficeminiquiz.MainActivity"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    tools:context="com.example.android.theofficeminiquiz.MainActivity">
 
 
     <TextView
+        style="@style/Main_Style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="The Office Quiz"
-        android:textSize="48sp"
-        android:paddingLeft="24dp"
-        android:paddingTop="16dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="@string/title"
+        android:textSize="36dp"
+
 
         />
 
     <ImageView
+        android:id="@+id/mainofficeimage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/theofficegroup"
-        android:id="@+id/mainofficeimage"
-        android:layout_marginTop="24dp"
-        android:layout_marginLeft="40dp"/>
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/theofficegroup" />
 
 
     <Button
@@ -35,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="128dp"
         android:layout_marginTop="32dp"
-        android:text="GET STARTED " />
+        android:text="@string/get_start" />
 
 
 </LinearLayout>

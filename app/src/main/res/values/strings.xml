@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">TheOfficeMiniQuiz</string>
+    <string name="title">The Office Mini Quiz</string>
+    <string name="get_start">Get Started</string>
     <string name="enter_name">Enter Your Name </string>
     <string name="name_hint">ENTER YOUR NAME</string>
     <string name="andy_school_question">Question 2\nWhat college did Andy Bernard Attend?</string>
     <string name="current_score">Current Score</string>
+    <string name="Meredith">Meredith</string>
     <string name="meredith">meredith</string>
     <string name="michael_car">Question 1 \nWho Did Michael hit with his car?</string>
     <string name="answer_hint">Type Answer</string>
@@ -34,11 +37,23 @@
     <string name="false_no">False</string>
     <string name= "zero_text">0</string>
     <string name="get_score">Get Score</string>
+    <string name="reset_score">Replay</string>
+    <string name="stanley">Question 9\nWho uttered the phrase, "Did I stutter?"?</string>
+    <string name="stanley_answer">Stanley</string>
+    <string name="kelly_answer">Kelly</string>
+    <string name="jim_answer">Jim</string>
+    <string name="creed_answer">Creed</string>
+    <string name="theSong">Question 10\nWho performed the theme song to the show?</string>
+    <string name="John">John Mayer</string>
+    <string name="chris">Chris Martin</string>
+    <string name="scrantones">The Scrantones</string>
+    <string name="Darryl">Darryl</string>
+    <string name="share_score">Share Score</string>
 
 
 
     <string-array name="andyQuestion">
-        <item>  </item>
+        <item> CHOOSE ONE</item>
         <item>LOYOLA CHICAGO</item>
         <item>CORNELL</item>
         <item>NYU</item>
