@@ -31,7 +31,6 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
     EditText car;
     EditText yourName;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -74,8 +73,9 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
 
         car = findViewById(R.id.hit_with_car);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-
     }
+
+
     //Method called when the Get Score button is selected. Used to calculate answers and provide Toast Message//
     public void displayScore(View view) {
 
@@ -132,13 +132,10 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
                 correctAnswer++;
                 break;
             case 3:
-
                 break;
             case 4:
-
                 break;
             case 5:
-
                 break;
         }
     }
