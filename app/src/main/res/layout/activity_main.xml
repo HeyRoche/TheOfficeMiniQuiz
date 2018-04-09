@@ -7,7 +7,6 @@
     android:orientation="vertical"
     tools:context="com.example.android.theofficeminiquiz.MainActivity">
 
-
     <TextView
         style="@style/Main_Style"
         android:layout_width="wrap_content"
@@ -15,10 +14,7 @@
         android:layout_marginTop="24dp"
         android:gravity="center"
         android:text="@string/title"
-        android:textSize="36dp"
-
-
-        />
+        android:textSize="36dp" />
 
     <ImageView
         android:id="@+id/mainofficeimage"
@@ -29,7 +25,6 @@
         android:scaleType="centerCrop"
         android:src="@drawable/theofficegroup" />
 
-
     <Button
         android:id="@+id/buttonStart"
         android:layout_width="wrap_content"
@@ -37,6 +32,5 @@
         android:layout_marginLeft="128dp"
         android:layout_marginTop="32dp"
         android:text="@string/get_start" />
-
 
 </LinearLayout>
