@@ -29,6 +29,15 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
     RadioButton selectionThreeQuestion10;
     EditText car;
     EditText yourName;
+    RadioGroup radioGroup1;
+    RadioGroup radioGroup2;
+    RadioGroup radioGroup3;
+    RadioGroup radioGroup4;
+    RadioGroup radioGroup5;
+    RadioGroup radioGroup6;
+    CheckBox selectionOneCheckBox;
+    CheckBox selectionOneCheckBox2;
+    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +53,11 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
 
         generalQuestions();
     }
+
     //Method used to call viewIDs
     public void generalQuestions() {
 
-        EditText yourName = findViewById(R.id.user_name);
+        yourName = findViewById(R.id.user_name);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         selectionThreeRadio = (findViewById(R.id.radio_2005));
@@ -56,22 +66,52 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
 
         selectionTwoQuestion6 = findViewById(R.id.radio_candles);
 
-        selectionTwoCheckBox2 =  findViewById(R.id.scranton_strangler);
+        selectionTwoCheckBox2 = findViewById(R.id.scranton_strangler);
 
-        selectionThreeCheckBox2 =  findViewById(R.id.hr);
+        selectionThreeCheckBox2 = findViewById(R.id.hr);
 
-        selectionOneQuestion8 =  findViewById(R.id.true_school);
+        selectionOneQuestion8 = findViewById(R.id.true_school);
 
-        selectionTwoCheckBox =  findViewById(R.id.Toby);
+        selectionTwoCheckBox = findViewById(R.id.Toby);
 
         selectionThreeCheckBox = findViewById(R.id.Roy);
 
-        selectionTwoQuestion9 =  findViewById(R.id.Stanley_selection);
+        selectionTwoQuestion9 = findViewById(R.id.Stanley_selection);
 
         selectionThreeQuestion10 = findViewById(R.id.scrantones);
 
         car = findViewById(R.id.hit_with_car);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
+        radioGroup1 = findViewById(R.id.radioGroup_1_year);
+
+        radioGroup2 = findViewById(R.id.radioGroup_2_location);
+
+        radioGroup3 = findViewById(R.id.radioGroup_3_jan);
+
+        radioGroup4 = findViewById(R.id.radioGroup_4_school);
+
+        radioGroup5 = findViewById(R.id.radioGroup_5_stanley);
+
+        radioGroup6 = findViewById(R.id.radioGroup_6_song);
+
+        selectionOneCheckBox = findViewById(R.id.Jim);
+
+        selectionOneCheckBox2 = findViewById(R.id.mike_favorite);
+
+        spinner = findViewById(R.id.andySpinner);
+
+        yourName = findViewById(R.id.user_name);
+
+        selectionTwoCheckBox2 = findViewById(R.id.scranton_strangler);
+
+        selectionThreeCheckBox2 = findViewById(R.id.hr);
+
+        selectionTwoCheckBox = findViewById(R.id.Toby);
+
+        selectionThreeCheckBox = findViewById(R.id.Roy);
+
+        car = findViewById(R.id.hit_with_car);
     }
 
 
@@ -108,17 +148,17 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
             correctAnswer++;
         }
         yourName = findViewById(R.id.user_name);
-        String yourNameEntered= yourName.getText().toString();
+        String yourNameEntered = yourName.getText().toString();
 
         if (correctAnswer >= 8) {
-            Toast.makeText(this, yourNameEntered + " , Congrats you answered " + correctAnswer + " out of 10 correctly!", Toast.LENGTH_LONG).show();
-        }else { Toast.makeText(this, yourNameEntered + ", Seriously, Toby you got "  + correctAnswer + " out of 10 correctly!" +"You should re-watch the series!", Toast.LENGTH_LONG).show();
-            }
+            Toast.makeText(this, yourNameEntered + getString((R.string.congrats_message)) + correctAnswer + getString((R.string.correct10)), Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, yourNameEntered + getString((R.string.tobyWrong)) + correctAnswer + getString((R.string.correct10)) + getString((R.string.re_watch)), Toast.LENGTH_LONG).show();
+        }
     }
 
     /**
      * Method to check answer in spinner.
-     *
      */
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -147,52 +187,45 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
     public void resetScore(View view) {
         correctAnswer = 0;
 
-        RadioGroup radioGroup1 = findViewById(R.id.radioGroup_1_year);
-        radioGroup1.clearCheck();
+        //All RadioGroup in app are cleared
 
-        RadioGroup radioGroup2 = findViewById(R.id.radioGroup_2_location);
-        radioGroup2.clearCheck();
+            radioGroup1.clearCheck();
 
-        RadioGroup radioGroup3 = findViewById(R.id.radioGroup_3_jan);
-        radioGroup3.clearCheck();
+            radioGroup2.clearCheck();
 
-        RadioGroup radioGroup4 = findViewById(R.id.radioGroup_4_school);
-        radioGroup4.clearCheck();
+            radioGroup3.clearCheck();
 
-        RadioGroup radioGroup5 = findViewById(R.id.radioGroup_5_stanley);
-        radioGroup5.clearCheck();
+            radioGroup4.clearCheck();
 
-        RadioGroup radioGroup6 = findViewById(R.id.radioGroup_6_song);
-        radioGroup6.clearCheck();
+            radioGroup5.clearCheck();
 
-        EditText userName = findViewById(R.id.user_name);
-        userName.getText().clear();
+            radioGroup6.clearCheck();
 
-        EditText car = findViewById(R.id.hit_with_car);
+        //All Checkbox selections are cleared.
+            selectionOneCheckBox.setChecked(false);
+
+            selectionTwoCheckBox.setChecked(false);
+
+            selectionThreeCheckBox.setChecked(false);
+
+            selectionOneCheckBox2.setChecked(false);
+
+            selectionTwoCheckBox2.setChecked(false);
+
+            selectionThreeCheckBox2.setChecked(false);
+
+        //Remaining answers are cleared.
+        spinner.setAdapter(null);
+        yourName.getText().clear();
         car.getText().clear();
 
-        CheckBox selectionOneCheckBox = findViewById(R.id.Jim);
-        selectionOneCheckBox.setChecked(false);
-
-        CheckBox selectionTwoCheckBox = findViewById(R.id.Toby);
-        selectionTwoCheckBox.setChecked(false);
-
-        CheckBox selectionThreeCheckBox = findViewById(R.id.Roy);
-        selectionThreeCheckBox.setChecked(false);
-
-        CheckBox selectionOneCheckBox2 = findViewById(R.id.mike_favorite);
-        selectionOneCheckBox2.setChecked(false);
-
-        CheckBox selectionTwoCheckBox2 = findViewById(R.id.scranton_strangler);
-        selectionTwoCheckBox2.setChecked(false);
-
-        CheckBox selectionThreeCheckBox2 = findViewById(R.id.hr);
-        selectionThreeCheckBox2.setChecked(false);
-
-        Spinner spinner = findViewById(R.id.andySpinner);
-        spinner.setAdapter(null);
     }
 }
+
+
+
+
+
 
 
 
