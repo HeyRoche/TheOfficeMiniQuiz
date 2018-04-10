@@ -60,7 +60,7 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         yourName = findViewById(R.id.user_name);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-        selectionThreeRadio = (findViewById(R.id.radio_2005));
+        selectionThreeRadio = findViewById(R.id.radio_2005);
 
         selectionOneQuestion5 = findViewById(R.id.radio_Scranton);
 
@@ -143,7 +143,7 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
             correctAnswer++;
         }
         car = findViewById(R.id.hit_with_car);
-        String carResponse = car.getText().toString().toLowerCase();
+        String carResponse = car.getText().toString();
         if (carResponse.equalsIgnoreCase(getString(R.string.Meredith))) {
             correctAnswer++;
         }
