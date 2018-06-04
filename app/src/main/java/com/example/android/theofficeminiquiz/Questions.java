@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 public class Questions extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+
+    //Declares global variables throughout the quiz.
     int correctAnswer = 0;
     RadioButton selectionThreeRadio;
     RadioButton selectionOneQuestion5;
@@ -39,12 +41,15 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
     CheckBox selectionOneCheckBox2;
     Spinner spinner;
 
+    // Checks the answers during the one create cycle; was previously informed to do this as a best practice for memory use of application.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.questions);
 
+         // I learned who to implement a spinner through YouTube videos ( https://www.youtube.com/watch?v=28jA5-mO8K8 and https://www.youtube.com/watch?v=sH_f8mr-2v8&t=306s)
+        // as well as https://developer.android.com/guide/topics/ui/controls/spinner
         Spinner spinner = findViewById(R.id.andySpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.andyQuestion, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -54,7 +59,7 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         generalQuestions();
     }
 
-    //Method used to call viewIDs
+    //This method is used to check the answers by referring to the viewIDs. Only correct selections are present.
     public void generalQuestions() {
 
         yourName = findViewById(R.id.user_name);
@@ -114,8 +119,7 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         car = findViewById(R.id.hit_with_car);
     }
 
-
-    //Method called when the Get Score button is selected. Used to calculate answers and provide Toast Message//
+    //Method called when the Get Score button is selected. Used to calculate answers and provide Toast Messages.
     public void displayScore(View view) {
 
         if (selectionThreeRadio.isChecked()) {
@@ -146,20 +150,23 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         String carResponse = car.getText().toString();
         if (carResponse.equalsIgnoreCase(getString(R.string.Meredith))) {
             correctAnswer++;
+        }else if(carResponse.equalsIgnoreCase(getString(R.string.Meredith_S))){
+            correctAnswer++;
         }
+
         yourName = findViewById(R.id.user_name);
         String yourNameEntered = yourName.getText().toString();
-
-        if (correctAnswer >= 8) {
-            Toast.makeText(this, yourNameEntered + getString((R.string.congrats_message)) + correctAnswer + getString((R.string.correct10)), Toast.LENGTH_LONG).show();
+        if(correctAnswer >10) {
+            correctAnswer=10;
+            Toast.makeText(this, yourNameEntered  + getString((R.string.congrats_message)) + correctAnswer  + getString((R.string.correct10)), Toast.LENGTH_LONG).show();
+        }else if (correctAnswer >= 8) {
+            Toast.makeText(this, yourNameEntered  + getString((R.string.congrats_message)) + correctAnswer  + getString((R.string.correct10)), Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(this, yourNameEntered + getString((R.string.tobyWrong)) + correctAnswer + getString((R.string.correct10)) + getString((R.string.re_watch)), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, yourNameEntered  + getString((R.string.tobyWrong)) + correctAnswer  + getString((R.string.correct10)) + getString((R.string.re_watch)), Toast.LENGTH_LONG).show();
         }
     }
 
-    /**
-     * Method to check answer in spinner.
-     */
+  //Method used to select the answer from the spinner.
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         switch (i) {
@@ -183,7 +190,7 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
     public void onNothingSelected(AdapterView<?> adapterView) {
     }
 
-    //Method to reset the score
+    //Method to reset the score when "Replay" is selected
     public void resetScore(View view) {
         correctAnswer = 0;
 
@@ -218,7 +225,6 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         spinner.setAdapter(null);
         yourName.getText().clear();
         car.getText().clear();
-
     }
 }
 

@@ -7,7 +7,7 @@
     <string name="andy_school_question">Question 2\nWhat college did Andy Bernard Attend?</string>
     <string name="current_score">Current Score</string>
     <string name="Meredith">Meredith</string>
-    <string name="meredith">meredith</string>
+    <string name="Meredith_S">Meredith </string>
     <string name="michael_car">Question 1 \nWho Did Michael hit with his car?</string>
     <string name="answer_hint">Type Answer</string>
     <string name="question_3">Question 3</string>
@@ -49,10 +49,10 @@
     <string name="scrantones">The Scrantones</string>
     <string name="Darryl">Darryl</string>
     <string name="share_score">Share Score</string>
-    <string name="congrats_message">, Congrats you answered </string>
-    <string name="correct10"> out of 10 correctly!</string>
-    <string name="tobyWrong">! Seriously, Toby you got   </string>
-    <string name="re_watch">" You should re-watch the series!</string>
+    <string name="congrats_message">,Congrats you answered  </string>
+    <string name="correct10">  out of 10 correctly!</string>
+    <string name="tobyWrong">! Seriously, "Toby" out got   </string>
+    <string name="re_watch"> You should re-watch the series!</string>
 
     <string-array name="andyQuestion">
         <item> CHOOSE ONE</item>
