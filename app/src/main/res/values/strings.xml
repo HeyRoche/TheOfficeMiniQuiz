@@ -50,8 +50,8 @@
     <string name="Darryl">Darryl</string>
     <string name="share_score">Share Score</string>
     <string name="congrats_message">,Congrats you answered  </string>
-    <string name="correct10">  out of 10 correctly!</string>
-    <string name="tobyWrong">! Seriously, "Toby" out got   </string>
+    <string name="correct10">   out of 10 correctly! </string>
+    <string name="tobyWrong">! Seriously, Toby out got  </string>
     <string name="re_watch"> You should re-watch the series!</string>
 
     <string-array name="andyQuestion">

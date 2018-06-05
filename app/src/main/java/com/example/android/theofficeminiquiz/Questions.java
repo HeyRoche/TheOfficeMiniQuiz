@@ -17,16 +17,18 @@ import android.widget.Toast;
 public class Questions extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
 
-    //Declares global variables throughout the quiz.
+    //Declares  variables throughout the quiz.
     int correctAnswer = 0;
     RadioButton selectionThreeRadio;
     RadioButton selectionOneQuestion5;
     RadioButton selectionTwoQuestion6;
+    CheckBox selectionOneCheckBox2;
     CheckBox selectionTwoCheckBox2;
-    CheckBox selectionThreeCheckBox;
     CheckBox selectionThreeCheckBox2;
-    RadioButton selectionOneQuestion8;
+    CheckBox selectionOneCheckBox;
     CheckBox selectionTwoCheckBox;
+    CheckBox selectionThreeCheckBox;
+    RadioButton selectionOneQuestion8;
     RadioButton selectionTwoQuestion9;
     RadioButton selectionThreeQuestion10;
     EditText car;
@@ -37,8 +39,6 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
     RadioGroup radioGroup4;
     RadioGroup radioGroup5;
     RadioGroup radioGroup6;
-    CheckBox selectionOneCheckBox;
-    CheckBox selectionOneCheckBox2;
     Spinner spinner;
 
     // Checks the answers during the one create cycle; was previously informed to do this as a best practice for memory use of application.
@@ -59,7 +59,7 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         generalQuestions();
     }
 
-    //This method is used to check the answers by referring to the viewIDs. Only correct selections are present.
+    //This method is used to check the answers by referring to the viewIDs. Incorrect checkboxes are included.
     public void generalQuestions() {
 
         yourName = findViewById(R.id.user_name);
@@ -71,15 +71,7 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
 
         selectionTwoQuestion6 = findViewById(R.id.radio_candles);
 
-        selectionTwoCheckBox2 = findViewById(R.id.scranton_strangler);
-
-        selectionThreeCheckBox2 = findViewById(R.id.hr);
-
         selectionOneQuestion8 = findViewById(R.id.true_school);
-
-        selectionTwoCheckBox = findViewById(R.id.Toby);
-
-        selectionThreeCheckBox = findViewById(R.id.Roy);
 
         selectionTwoQuestion9 = findViewById(R.id.Stanley_selection);
 
@@ -100,17 +92,17 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
 
         radioGroup6 = findViewById(R.id.radioGroup_6_song);
 
-        selectionOneCheckBox = findViewById(R.id.Jim);
-
-        selectionOneCheckBox2 = findViewById(R.id.mike_favorite);
-
         spinner = findViewById(R.id.andySpinner);
 
         yourName = findViewById(R.id.user_name);
 
+        selectionOneCheckBox2 = findViewById(R.id.mike_favorite);
+
         selectionTwoCheckBox2 = findViewById(R.id.scranton_strangler);
 
         selectionThreeCheckBox2 = findViewById(R.id.hr);
+
+        selectionOneCheckBox = findViewById(R.id.Jim);
 
         selectionTwoCheckBox = findViewById(R.id.Toby);
 
@@ -131,13 +123,13 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         if (selectionTwoQuestion6.isChecked()) {
             correctAnswer++;
         }
-        if (selectionTwoCheckBox2.isChecked() && selectionThreeCheckBox2.isChecked()) {
+        if (selectionTwoCheckBox2.isChecked() && selectionThreeCheckBox2.isChecked()&& !selectionOneCheckBox2.isChecked()) {
             correctAnswer++;
         }
         if (selectionOneQuestion8.isChecked()) {
             correctAnswer++;
         }
-        if (selectionTwoCheckBox.isChecked() && selectionThreeCheckBox.isChecked()) {
+        if (selectionTwoCheckBox.isChecked() && selectionThreeCheckBox.isChecked() && !selectionOneCheckBox.isChecked()) {
             correctAnswer++;
         }
         if (selectionTwoQuestion9.isChecked()) {
@@ -158,11 +150,11 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         String yourNameEntered = yourName.getText().toString();
         if(correctAnswer >10) {
             correctAnswer=10;
-            Toast.makeText(this, yourNameEntered  + getString((R.string.congrats_message)) + correctAnswer  + getString((R.string.correct10)), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, yourNameEntered  + getString((R.string.congrats_message)) +  correctAnswer  + getString((R.string.correct10)), Toast.LENGTH_LONG).show();
         }else if (correctAnswer >= 8) {
-            Toast.makeText(this, yourNameEntered  + getString((R.string.congrats_message)) + correctAnswer  + getString((R.string.correct10)), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, yourNameEntered  + getString((R.string.congrats_message)) +  correctAnswer  + getString((R.string.correct10)), Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(this, yourNameEntered  + getString((R.string.tobyWrong)) + correctAnswer  + getString((R.string.correct10)) + getString((R.string.re_watch)), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, yourNameEntered  + getString((R.string.tobyWrong)) +  correctAnswer  + getString((R.string.correct10)) + getString((R.string.re_watch)), Toast.LENGTH_LONG).show();
         }
     }
 
@@ -227,15 +219,3 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         car.getText().clear();
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
